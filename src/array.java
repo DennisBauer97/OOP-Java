@@ -1,5 +1,3 @@
-package dev.dennisbauer;
-
 public class Main {
     public static void main(String[] args) {
         // 1. DEKLARATION UND INITIALISIERUNG VON ARRAYS
