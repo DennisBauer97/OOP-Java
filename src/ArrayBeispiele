@@ -1,0 +1,84 @@
+package dev.dennisbauer;
+
+public class ArrayBeispiele {
+    public static void main(String[] args) {
+        System.out.println("===== EINFACHE ARRAY-BEISPIELE =====\n");
+
+        // 1. EINFACHE ARRAYS ERSTELLEN
+        System.out.println("1. Arrays erstellen:");
+
+        // Array mit fester Größe erstellen (alle Werte sind 0)
+        int[] zahlenArray = new int[5];
+        System.out.println("   Länge des Arrays: " + zahlenArray.length);
+
+        // Array mit bestimmten Werten erstellen
+        int[] noten = {1, 2, 3, 4, 5, 6};
+        System.out.println("   Noten-Array: " + noten[0] + ", " + noten[1] + ", " + noten[2] + "...");
+
+
+        // 2. VERSCHIEDENE ARTEN VON ARRAYS
+        System.out.println("\n2. Verschiedene Datentypen in Arrays:");
+
+        // Zahlen-Array
+        int[] ganzeZahlen = {10, 20, 30, 40, 50};
+        System.out.println("   Ganzzahlen: " + ganzeZahlen[0] + ", " + ganzeZahlen[1] + "...");
+
+        // Kommazahlen-Array
+        double[] kommaZahlen = {1.5, 2.5, 3.5};
+        System.out.println("   Kommazahlen: " + kommaZahlen[0] + ", " + kommaZahlen[1] + "...");
+
+        // Text-Array
+        String[] namen = {"Anna", "Ben", "Clara"};
+        System.out.println("   Namen: " + namen[0] + ", " + namen[1] + ", " + namen[2]);
+
+
+        // 3. MIT ARRAY-ELEMENTEN ARBEITEN
+        System.out.println("\n3. Array-Elemente verwenden:");
+
+        // Ein Element lesen
+        System.out.println("   Erstes Element: " + ganzeZahlen[0]);  // 10
+
+        // Ein Element ändern
+        ganzeZahlen[2] = 99;  // Drittes Element (Index 2) auf 99 ändern
+        System.out.println("   Geändertes Element: " + ganzeZahlen[2]);  // 99
+
+
+        // 4. DURCH ARRAYS DURCHLAUFEN
+        System.out.println("\n4. Durch Arrays durchlaufen:");
+
+        // Mit normaler for-Schleife
+        System.out.println("   Mit for-Schleife:");
+        for (int i = 0; i < namen.length; i++) {
+            System.out.println("     - " + namen[i]);
+        }
+
+        // Mit for-each-Schleife (einfacher)
+        System.out.println("   Mit for-each-Schleife:");
+        for (String name : namen) {
+            System.out.println("     - " + name);
+        }
+
+
+        // 5. MEHRDIMENSIONALE ARRAYS (TABELLEN)
+        System.out.println("\n5. Mehrdimensionale Arrays (Tabellen):");
+
+        // 2D-Array (Tabelle mit 3x3 Zahlen)
+        int[][] tabelle = {
+                {1, 2, 3},   // Erste Zeile
+                {4, 5, 6},   // Zweite Zeile
+                {7, 8, 9}    // Dritte Zeile
+        };
+
+        // Element in Zeile 1, Spalte 2 ausgeben (Index beginnt bei 0)
+        System.out.println("   Element in Zeile 1, Spalte 2: " + tabelle[0][1]);  // 2
+
+        // Gesamte Tabelle ausgeben
+        System.out.println("   Gesamte Tabelle:");
+        for (int[] zeile : tabelle) {
+            for (int zahl : zeile) {
+                System.out.print("     " + zahl);
+            }
+            System.out.println();  // Neue Zeile nach jeder Zeile der Tabelle
+        }
+    }
+}
