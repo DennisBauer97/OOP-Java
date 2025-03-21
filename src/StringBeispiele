@@ -1,0 +1,177 @@
+package dev.dennisbauer;
+
+public class StringBeispiele {
+
+    public static void main(String[] args) {
+        System.out.println("===== EINFACHE STRING METHODEN FÜR ANFÄNGER =====\n");
+
+        // Beispiele für jede Methode einzeln zeigen
+        zeigeLength();
+        zeigeEquals();
+        zeigeSubstring();
+        zeigeTrim();
+
+        // Ein einfaches Beispiel, das alle Methoden kombiniert
+        einfachesKombiniertesBeispiel();
+    }
+
+    /**
+     * Die length() Methode - Zählt die Anzahl der Zeichen in einem String
+     */
+    public static void zeigeLength() {
+        System.out.println("===== length() METHODE =====");
+
+        // Beispiel 1: Normaler Text
+        String name = "Anna";
+        int anzahlBuchstaben = name.length();
+        System.out.println("Der Name '" + name + "' hat " + anzahlBuchstaben + " Buchstaben.");
+
+        // Beispiel 2: Text mit Leerzeichen
+        String satz = "Hallo Welt!";
+        int anzahlZeichen = satz.length();
+        System.out.println("Der Satz '" + satz + "' hat " + anzahlZeichen + " Zeichen (mit Leerzeichen und Satzzeichen).");
+
+        // Beispiel 3: Leerer Text
+        String leereSMS = "";
+        int laenge = leereSMS.length();
+        System.out.println("Eine leere SMS hat " + laenge + " Zeichen.");
+
+        System.out.println();
+    }
+
+    /**
+     * Die equals() Methode - Vergleicht den Inhalt von zwei Strings
+     */
+    public static void zeigeEquals() {
+        System.out.println("===== equals() METHODE =====");
+
+        // Beispiel 1: Gleiche Strings
+        String passwort1 = "geheim123";
+        String passwort2 = "geheim123";
+
+        // Vergleich mit equals
+        boolean sindGleich = passwort1.equals(passwort2);
+        System.out.println("Passwort 1: " + passwort1);
+        System.out.println("Passwort 2: " + passwort2);
+        System.out.println("Sind die Passwörter gleich? " + sindGleich);
+
+        // Beispiel 2: Unterschiedliche Strings
+        String name1 = "Max";
+        String name2 = "Moritz";
+
+        System.out.println("\nName 1: " + name1);
+        System.out.println("Name 2: " + name2);
+        System.out.println("Sind die Namen gleich? " + name1.equals(name2));
+
+        // Beispiel 3: Groß-/Kleinschreibung beachten
+        String benutzer1 = "admin";
+        String benutzer2 = "Admin";
+
+        System.out.println("\nBenutzer 1: " + benutzer1);
+        System.out.println("Benutzer 2: " + benutzer2);
+        System.out.println("Sind die Benutzernamen gleich? " + benutzer1.equals(benutzer2));
+        System.out.println("Wichtig: Groß- und Kleinschreibung wird unterschieden!");
+
+        System.out.println();
+    }
+
+    /**
+     * Die substring() Methode - Schneidet einen Teil aus einem String heraus
+     */
+    public static void zeigeSubstring() {
+        System.out.println("===== substring() METHODE =====");
+
+        // Einfaches Beispiel mit Indexerklärung
+        String text = "Programmieren";
+        System.out.println("Text: " + text);
+        System.out.println("Index: 0123456789012");
+
+        // Erste 4 Buchstaben (von Index 0 bis 3)
+        String teil1 = text.substring(0, 4);
+        System.out.println("\n1) Die ersten 4 Buchstaben (0-3): " + teil1);
+
+        // Buchstaben 5-8 (von Index 4 bis 7)
+        String teil2 = text.substring(4, 8);
+        System.out.println("2) Buchstaben 5-8 (4-7): " + teil2);
+
+        // Ab Buchstabe 9 (ab Index 8) bis zum Ende
+        String teil3 = text.substring(8);
+        System.out.println("3) Ab Buchstabe 9 (8) bis Ende: " + teil3);
+
+        // Einfaches Beispiel: Vornamen aus vollständigem Namen extrahieren
+        String vollName = "Max Mustermann";
+        String vorname = vollName.substring(0, vollName.indexOf(" "));
+        System.out.println("\nAus dem Namen '" + vollName + "' den Vornamen extrahieren: " + vorname);
+
+        System.out.println();
+    }
+
+    /**
+     * Die trim() Methode - Entfernt Leerzeichen am Anfang und Ende eines Strings
+     */
+    public static void zeigeTrim() {
+        System.out.println("===== trim() METHODE =====");
+
+        // Beispiel mit Leerzeichen am Anfang und Ende
+        String textMitLeerzeichen = "   Hallo!   ";
+        System.out.println("Text mit Leerzeichen: '" + textMitLeerzeichen + "'");
+
+        String textOhneLeerzeichen = textMitLeerzeichen.trim();
+        System.out.println("Text nach trim(): '" + textOhneLeerzeichen + "'");
+
+        // Länge vor und nach trim()
+        System.out.println("Länge vorher: " + textMitLeerzeichen.length() + " Zeichen");
+        System.out.println("Länge nachher: " + textOhneLeerzeichen.length() + " Zeichen");
+
+        // Ein praktisches Beispiel: Benutzereingabe bereinigen
+        String eingabe = "  user123  ";
+        System.out.println("\nBenutzereingabe: '" + eingabe + "'");
+
+        String bereinigtEingabe = eingabe.trim();
+        System.out.println("Bereinigte Eingabe: '" + bereinigtEingabe + "'");
+
+        System.out.println("\nWichtig: trim() entfernt NUR Leerzeichen am Anfang und Ende, nicht in der Mitte!");
+        String textMitLeerzeichenInMitte = "Hallo  Welt";
+        System.out.println("Text mit Leerzeichen in der Mitte: '" + textMitLeerzeichenInMitte + "'");
+        System.out.println("Nach trim(): '" + textMitLeerzeichenInMitte.trim() + "'");
+
+        System.out.println();
+    }
+
+    /**
+     * Ein einfaches Beispiel mit allen Methoden kombiniert
+     */
+    public static void einfachesKombiniertesBeispiel() {
+        System.out.println("===== EINFACHES KOMBINIERTES BEISPIEL =====");
+
+        // Beispiel: Benutzereingabe verarbeiten (mit Leerzeichen)
+        String eingabe = "   Max Mustermann   ";
+
+        // Schritt 1: Entferne Leerzeichen am Anfang und Ende
+        String bereinigteEingabe = eingabe.trim();
+        System.out.println("Schritt 1: Leerzeichen entfernen");
+        System.out.println("Vor trim(): '" + eingabe + "'");
+        System.out.println("Nach trim(): '" + bereinigteEingabe + "'");
+
+        // Schritt 2: Prüfe, ob die Eingabe leer ist
+        System.out.println("\nSchritt 2: Prüfen, ob die Eingabe leer ist");
+        if (bereinigteEingabe.length() == 0) {
+            System.out.println("Fehler: Die Eingabe ist leer!");
+        } else {
+            System.out.println("Die Eingabe enthält " + bereinigteEingabe.length() + " Zeichen.");
+        }
+
+        // Schritt 3: Extrahiere den Vornamen (alles vor dem Leerzeichen)
+        System.out.println("\nSchritt 3: Vornamen extrahieren");
+        String vorname = bereinigteEingabe.substring(0, bereinigteEingabe.indexOf(" "));
+        System.out.println("Der Vorname ist: " + vorname);
+
+        // Schritt 4: Vergleiche den Vornamen mit bekannten Namen
+        System.out.println("\nSchritt 4: Namen vergleichen");
+        if (vorname.equals("Max")) {
+            System.out.println("Hallo Max! Schön dich zu sehen!");
+        } else {
+            System.out.println("Hallo " + vorname + "! Wir kennen uns noch nicht.");
+        }
+    }
+}
